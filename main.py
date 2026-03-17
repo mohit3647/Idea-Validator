@@ -68,17 +68,23 @@ def print_report(report: dict):
 
 
 def main():
-    print("Idea Validator Agent")
-    print("Paste your product idea below (then press Enter twice to submit):\n")
+    import sys
 
-    lines = []
-    while True:
-        line = input()
-        if line == "":
-            break
-        lines.append(line)
+    # Support both piped input and interactive mode
+    if not sys.stdin.isatty():
+        idea = sys.stdin.read().strip()
+    else:
+        print("Idea Validator Agent")
+        print("Paste your product idea below (then press Enter twice to submit):\n")
 
-    idea = "\n".join(lines)
+        lines = []
+        while True:
+            line = input()
+            if line == "":
+                break
+            lines.append(line)
+
+        idea = "\n".join(lines)
 
     if not idea.strip():
         print("No idea provided. Exiting.")
