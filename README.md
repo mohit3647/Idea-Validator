@@ -1,4 +1,4 @@
-# Idea Validator Agent
+# idea-validator-agent
 
 An AI-powered tool that takes a raw product idea and returns a structured validation report — built for PMs who want to stress-test ideas before investing weeks of effort.
 
